@@ -6,4 +6,7 @@ import TheWelcome from '../components/TheWelcome.vue'
   <main>
     <TheWelcome />
   </main>
+  <v-btn>
+  Button
+</v-btn>
 </template>
