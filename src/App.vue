@@ -10,10 +10,10 @@ import FooterSection from './components/FooterSection.vue';
     <v-container>
       <NavBar/>
     </v-container>
-    <v-container>
+    <v-spacer>
       <router-view/>
-    </v-container>
-    <v-spacer></v-spacer>
+    </v-spacer>
+    
     <v-container>
       <FooterSection></FooterSection>
     </v-container>

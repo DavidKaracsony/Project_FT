@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Tenisové loptičky - 3KS",
+        "image": "tenisove_lopticky_3ks.jpg",
+        "animal": "pes",
+        "type": "hracka",
+        "price": 3.00,
+        "description": "Tenisová loptička je ideálna na hranie a aportovanie. Vďaka jej žiarivým farbám je ľahké nájsť loptičku v tráve. 3 kusy v sáčku",
+        "rozmery": "Priemer: 6 cm"
+    },
+    {
+        "id": 2,
+        "name": "Plyšová hračka pre psov",
+        "image": "plysova_hracka_pes.jpg",
+        "animal": "pes",
+        "type": "hracka",
+        "price": 14.45,
+        "description": "Plyšová hračka pre psov. Je ako stvorená pre šteňatá, ktoré sa potrebujú pritúliť alebo psy, ktorí milujú mäkké hračky. Pri stlačení ňufánek píska.",
+        "rozmery": "48x46x11cm 0.34kg"
+    },
+    {
+        "id": 3,
+        "name": "Myšová hračka pre mačky",
+        "image": "hracka_pre_macku_mys.jpg",
+        "animal": "macka",
+        "type": "hracka",
+        "price": 3.35,
+        "description": "Veselá hračka, ktorá zabaví každé dieťa a pravdepodobne aj mačiatko! Dieťa myšku otočí a mačka ju začne naháňať : ) Myška je pokrytá mäkkou srsťou. Najzábavnejšia je však funkcia navíjania. Po zaskrutkovaní plastovej skrutky začne myš jazdiť na malých kolieskach a jej chvost sa otáča. S takouto myškou môže vaše dieťa trénovať plazenie alebo počiatočné dupanie : )",
+        "rozmery": "12 cm"
+    },
+    {
+        "id": 4,
+        "name": "Catch the mouse - Hračka pre mačku",
+        "image": "hracka_pre_macku_catch_the_mouse.jpg",
+        "animal": "macka",
+        "type": "hracka",
+        "price": 4.45,
+        "description": "Chyť myš, zábavná interaktívna hračka pre mačky, ktorá rozvíja ich prirodzené schopnosti. Hračka je veľmi prenosná, takže ju môžete mať v každej domácnosti. Vaša mačička si užije veľa zábavy a neomrzí ju to. Bude sa snažiť chytiť pohybujúcu sa myš.",
+        "rozmery": "(priemer / výška): 25 / 6,5 cm"
+    },
+    {
+        "id": 5,
+        "name": "BRIT Premium By Nature Adult Large L 15 kg",
+        "image": "brit-premium-by-nature-adult-large-l-15-kg.jpg",
+        "animal": "pes",
+        "type": "krmivo",
+        "price": 38.00,
+        "description": "Brit Premium By Nature je prirodzené a chutné krmivo s vysokým obsahom mäsa. Prichádzajú v mnohých variantoch, prispôsobené veľkosti, veku a kondícii psa. Medzi týmito potravinami si každý strážca nájde to svoje obľúbené. Krmivo Brit Premium By Nature obsahuje 45-55% kuracieho mäsa v každom balení. Vyznačujú sa výbornou stráviteľnosťou, nízkym obsahom lepku, vysokou toleranciou. Ich recepty zahŕňajú: ovocie a bylinky, ktoré podporujú silný imunitný systém a dobré trávenie; kolagén na podporu zdravých kĺbov, chrupaviek a väzov; lososový olej pre zdravú kožu a lesklú srsť.",
+        "rozmery": "15 kg"
+    },
+    {
+        "id": 6,
+        "name": "Royal Canin - Canine Medium Starter M&B 15 kg",
+        "image": "royal_canin_starter_15kg.jpg",
+        "animal": "pes",
+        "type": "krmivo",
+        "price": 108.00,
+        "description": "Obsah a zloženie živín, ktoré kopírujú potrebu príjmu vysokého obsahu energie na konci gravidity a počas laktácie. Výživa podporujúca prechod z materského mlieka na pevnú stravu (energetická hodnota, kvalitný proteín, tuky). Granule ľahko rehydratujú, pričom získavajú kašovitú konzistenciu, ktorá suke a odstaveným šteňatám uľahčuje ich príjem.",
+        "rozmery": "15 kg"
+    },
+    {
+        "id": 7,
+        "name": "WHISKAS Hovädzie mäso pre dospelé mačky 14 kg",
+        "image": "whiskas_14kg_hovadzie.jpg",
+        "animal": "macka",
+        "type": "krmivo",
+        "price": 35.78,
+        "description": "Suché krmivo WHISKAS® 1+ je nutrične kompletné a vyvážené krmivo pre dospelé mačky. Obsahuje chutné suché granulované sušienky s náplňou, ktoré si zamiluje - chrumkavé na povrchu a s mäkkou a lahodnou náplňou vo vnútri.",
+        "rozmery": "14 kg"
+    },
+    {
+        "id": 8,
+        "name": "Applaws Cat Adult Chicken 7,5 kg",
+        "image": "applaws_granule_75.jpg",
+        "animal": "macka",
+        "type": "krmivo",
+        "price": 39.85,
+        "description": "Applaws Adult Cat Chicken je kompletní krmivo pro dospělé a starší kočky. Neobsahuje obiloviny, je přirozeně hypoalergenní. Přírodně konzervováno vitamínem E a rozmarýnovým olejem. Applaws obsahuje přírodní výtažky z brusinek, známé svým přínosem pro zdraví močových cest a prebiotika pomáhající udržovat zdravý trávicí systém. Přírodní omega 3 a omega 6 mastné kyseliny vyživují srst a tím pomáhají vytvářet hedvábný lesk a zároveň zachovat zdravou kůži. Antioxidační formule obsahuje směs přirozeně se vyskytujících antioxidantů selenu a přírodních tokoferolů. Výhody přírodních antioxidantů jsou stále více uznávány, jako důležité pro zdraví a vitalitu kočky.",
+        "rozmery": "7.5 kg"
+    }
+]

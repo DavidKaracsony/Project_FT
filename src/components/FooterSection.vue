@@ -10,7 +10,7 @@
           <v-col cols="12" sm="6">
             <v-row justify="end">
               <v-btn text icon>
-                <v-icon>mdi-facebook</v-icon>
+                <v-icon ref>mdi-facebook</v-icon>
               </v-btn>
               <v-btn text icon>
                 <v-icon>mdi-twitter</v-icon>

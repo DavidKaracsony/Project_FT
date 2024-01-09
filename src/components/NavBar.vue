@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app>
+    <v-app-bar app id="navbar">
         <v-toolbar-title id="navbartitle">Chovatelské potreby</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn text to="/">Home</v-btn>
@@ -16,5 +16,9 @@
   </script>
 
 <style scoped>
+#navbar
+{
+  background-color: orange;
+}
 
 </style>
