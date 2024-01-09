@@ -2,8 +2,5 @@
 </script>
 
 <template>
-  
+Cart
 </template>
-
-<style>
-</style>

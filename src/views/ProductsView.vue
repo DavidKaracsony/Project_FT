@@ -2,8 +2,5 @@
 </script>
 
 <template>
-  
+Products
 </template>
-
-<style>
-</style>
