@@ -1,6 +1,12 @@
 <script setup>
+
 </script>
 
 <template>
-Products
+  <v-container>
+    Products
+  </v-container>
 </template>
+
+<style>
+</style>

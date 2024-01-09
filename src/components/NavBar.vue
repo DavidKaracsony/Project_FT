@@ -1,17 +1,20 @@
 <template>
-
-  <v-layout class="rounded rounded-md" id="navbar">
-    <v-app-bar color="surface-variant">
+    <v-app-bar app>
+        <v-toolbar-title id="navbartitle">Chovatelské potreby</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn text to="/">Home</v-btn>
+        <v-btn text to="/about">About</v-btn>
+        <v-btn text to="/products">Products</v-btn>
+        <v-btn text to="/cart">Cart</v-btn>
     </v-app-bar>
-  </v-layout>
-
-</template>
+  </template>
+  
+  <script>
+  export default {
+    name: 'Navbar',
+  };
+  </script>
 
 <style scoped>
-
-#navbar{
-    margin-bottom: 300px;
-    align-items: center;
-}
 
 </style>

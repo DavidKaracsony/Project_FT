@@ -1,22 +1,36 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
+import FooterSection from './components/FooterSection.vue';
 </script>
 
+
 <template>
-      <nav>
-        <div>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/products">Products</RouterLink>
-        <RouterLink to="/cart">Shopping Cart</RouterLink>
-      </div>
-      </nav>
-      <div>
-        <RouterView />
-      </div>
-      
+  <v-app>
+    <v-container>
+      <NavBar/>
+    </v-container>
+    <v-container>
+      <router-view/>
+    </v-container>
+    <v-spacer></v-spacer>
+    <v-container>
+      <FooterSection></FooterSection>
+    </v-container>
+  </v-app>
 </template>
+
+<script>
+
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+    FooterSection,
+  }
+};
+</script>
+
 
 <style scoped>
 header {
