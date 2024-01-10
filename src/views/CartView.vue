@@ -67,8 +67,8 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="openCheckoutDialog">Agree</v-btn>
-        <v-btn color="red darken-1" text @click="confirmDialog = false">Disagree</v-btn>
+        <v-btn color="green darken-1" text @click="openCheckoutDialog">Yes</v-btn>
+        <v-btn color="red darken-1" text @click="confirmDialog = false">No</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

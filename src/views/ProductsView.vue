@@ -99,10 +99,6 @@ export default {
 <style scoped>
 
 
-.product-card {
-  cursor: pointer;
-  border: 1px solid orange;
-}
 
 .add-to-cart-btn {
   color: black; /* Set text color */

@@ -28,7 +28,7 @@
   <style scoped>
     .product-card {
       cursor: pointer;
-      border: 1px solid orange;
+      border: 2px solid orange;
     }
   
     .add-to-cart-btn {
