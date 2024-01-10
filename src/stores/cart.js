@@ -20,6 +20,10 @@ export const useCartStore = defineStore('cart', {
       if (index !== -1) {
         this.items.splice(index, 1);
       }
+    },
+
+    clearCart() {
+      this.items = [];
     }
   }
 });
