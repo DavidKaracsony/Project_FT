@@ -1,14 +1,34 @@
 <template>
   <v-container>
+    
     <v-row>
-    <ProductItem 
-      v-for="product in products" 
-      :key="product.id" 
-      :product="product" 
-      @add-to-cart="addToCart"
-      @open-dialog="handleDialogOpen"
-    />
-  </v-row>
+      <v-col cols="12" sm="6">
+        <v-select
+          label="Filter by Animal"
+          :items="['macka', 'pes', 'all']"
+          v-model="selectedAnimal"
+          @change="filterProducts"
+        ></v-select>
+      </v-col>
+      <v-col cols="12" sm="6">
+        <v-select
+          label="Filter by Type"
+          :items="['hracka', 'krmivo', 'all']"
+          v-model="selectedType"
+          @change="filterProducts"
+        ></v-select>
+      </v-col>
+    </v-row>
+    
+    <v-row>
+      <ProductItem 
+        v-for="product in filterProducts" 
+        :key="product.id" 
+        :product="product" 
+        @add-to-cart="addToCart"
+        @open-dialog="handleDialogOpen"
+      />
+    </v-row>
 
     <v-dialog v-model="dialog" width="500">
     <v-card>
@@ -38,6 +58,8 @@
 <script>
 import productsData from '@/assets/products.json';
 import ProductItem from '@/components/ProductItem.vue';
+import { useCartStore } from '@/stores/cart';
+
 
 export default {
   components: {
@@ -46,20 +68,31 @@ export default {
   data() {
     return {
       products: productsData,
+      selectedAnimal: 'all', // Default filter value
+      selectedType: 'all', // Default filter value
       dialog: false,
       selectedProduct: {},
     };
   },
+  computed: {
+    filterProducts() {
+      return this.products.filter(product => {
+        return (this.selectedAnimal === 'all' || product.animal === this.selectedAnimal) &&
+               (this.selectedType === 'all' || product.type === this.selectedType);
+      });
+    }
+  },
   methods: {
     addToCart(product) {
-      console.log("Adding to cart:", product);
+      const cart = useCartStore();
+      cart.addToCart(product);
+      console.log("Added to cart:", product);
     },
-    
     handleDialogOpen(product) {
-    this.selectedProduct = product;
-    this.dialog = true;
-  },
-  },
+      this.selectedProduct = product;
+      this.dialog = true;
+    }
+  }
 };
 </script>
 
