@@ -75,8 +75,8 @@ export default {
   data() {
     return {
       products: productsData,
-      selectedAnimal: 'all', // Default filter value
-      selectedType: 'all', // Default filter value
+      selectedAnimal: 'all',
+      selectedType: 'all',
       dialog: false,
       selectedProduct: {},
     };

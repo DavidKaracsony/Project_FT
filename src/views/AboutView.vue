@@ -6,7 +6,6 @@ import ContactUs from '@/components/ContactUs.vue';
 
 </script>
 
-
 <!--AboutView.vue View Template-->
 
 <template>
