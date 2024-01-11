@@ -1,9 +1,11 @@
 <template>
+  <h1 style="color: orange; text-align: center;">Shopping Cart</h1>
   <v-container>
+    <v-divider class="orange-divider"></v-divider>
     <!-- Check if there are items in the cart -->
     <div v-if="cart.items.length === 0" style="text-align: center;">
       <h1>Your cart is empty! <br>Try adding some items into it</h1> <br>
-      <v-btn text to="/products">Products</v-btn>
+      <v-btn class="products-button" text to="/products">Products</v-btn>
     </div>
 
     <!-- Display cart items if there are any -->
@@ -109,6 +111,7 @@
   </v-dialog>
 
     </template>
+    <v-divider class="orange-divider"></v-divider>
   </v-container>
 </template>
 
@@ -208,6 +211,17 @@ export default {
   margin-top: 20px; /* Adjust as needed */
   text-align: right;
   font-size: 1.2em; /* Adjust as needed */
+}
+
+.orange-divider {
+  color: orange;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  }
+
+  .products-button {
+  color: white;
+  background-color: orange;
 }
 
 </style>

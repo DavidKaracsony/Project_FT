@@ -1,6 +1,7 @@
-<template>
-  <v-container>
-    
+<template>  
+    <h1 style="color: orange; text-align: center;">Products</h1>
+    <v-container>
+      <v-divider class="orange-divider"></v-divider>
     <v-row>
       <v-col cols="12" sm="6">
         <v-select
@@ -19,6 +20,8 @@
         ></v-select>
       </v-col>
     </v-row>
+  </v-container>
+  <v-container>
     
     <v-row>
       <ProductItem 
@@ -36,9 +39,9 @@
       <v-card-title>{{ selectedProduct.name }}</v-card-title>
       <v-card-text>
         <div class="product-details">
-          <div><strong>Popis:</strong> {{ selectedProduct.description }}</div>
-          <div><strong>Cena:</strong> {{ selectedProduct.price}}€</div>
-          <div><strong>Detaily:</strong> {{ selectedProduct.rozmery }}</div>
+          <div><strong>Description:</strong> {{ selectedProduct.description }}</div>
+          <div><strong>Price:</strong> {{ selectedProduct.price}}€</div>
+          <div><strong>Details:</strong> {{ selectedProduct.rozmery }}</div>
         </div>
       </v-card-text>
       <v-card-actions>
@@ -52,6 +55,7 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
+  <v-divider class="orange-divider"></v-divider>
   </v-container>
 </template>
 
@@ -64,7 +68,7 @@ import { useCartStore } from '@/stores/cart';
 export default {
   components: {
     ProductItem
-  },
+},
   data() {
     return {
       products: productsData,
@@ -111,4 +115,11 @@ export default {
 .product-details > div {
     margin-bottom: 10px; /* Space out individual sections */
   }
+
+.orange-divider {
+  color: orange;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 </style>

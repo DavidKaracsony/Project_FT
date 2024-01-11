@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "name": "Catch the mouse - Hračka pre mačku",
+        "name": "Catch the mouse - Hračka pre mačky",
         "image": "hracka_pre_macku_catch_the_mouse.jpg",
         "animal": "macka",
         "type": "hracka",
@@ -55,7 +55,7 @@
         "image": "royal_canin_starter_15kg.jpg",
         "animal": "pes",
         "type": "krmivo",
-        "price": 108.00,
+        "price": 104.00,
         "description": "Obsah a zloženie živín, ktoré kopírujú potrebu príjmu vysokého obsahu energie na konci gravidity a počas laktácie. Výživa podporujúca prechod z materského mlieka na pevnú stravu (energetická hodnota, kvalitný proteín, tuky). Granule ľahko rehydratujú, pričom získavajú kašovitú konzistenciu, ktorá suke a odstaveným šteňatám uľahčuje ich príjem.",
         "rozmery": "15 kg"
     },
