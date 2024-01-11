@@ -1,56 +1,54 @@
+<!--CartView.vue View Template-->
+
 <template>
-  <h1 style="color: orange; text-align: center;">Shopping Cart</h1>
   <v-container>
+    
+    <h1 style="color: orange; text-align: center;">Shopping Cart</h1>
+    
     <v-divider class="orange-divider"></v-divider>
-    <!-- Check if there are items in the cart -->
+    
     <div v-if="cart.items.length === 0" style="text-align: center;">
-      <h1>Your cart is empty! <br>Try adding some items into it</h1> <br>
+      <h1>Your cart is empty!<br>Try adding some items into it</h1> <br>
       <v-btn class="products-button" text to="/products">Products</v-btn>
     </div>
 
-    <!-- Display cart items if there are any -->
     <template v-else>
       <v-row v-for="item in cart.items" :key="item.id" class="mb-2" style="align-items: center;">
-      <!-- Product Image Column -->
-      <v-col cols="12" sm="2">
-        <v-img
+        <v-col cols="12" sm="2">
+          <v-img
           :src="'/images/products/' + item.image"
           height="60"
           contain
-          class="product-image"
-        ></v-img>
-      </v-col>
+          class="product-image">
+          </v-img>
+        </v-col>
 
-      <!-- Product Name Column -->
-      <v-col cols="12" sm="3">
-        {{ item.name }}
-      </v-col>
+        <v-col cols="12" sm="3">
+          {{ item.name }}
+        </v-col>
 
-      <!-- Sum Column -->
-      <v-col cols="12" sm="2" class="align-self-center">
-        {{ (item.price * item.quantity).toFixed(2) }}€
-      </v-col>
+        <v-col cols="12" sm="2" class="align-self-center">
+          {{ (item.price * item.quantity).toFixed(2) }}€
+        </v-col>
 
-      <!-- Quantity Input Column -->
-      <v-col cols="12" sm="3">
-        <v-text-field
+        <v-col cols="12" sm="3">
+          <v-text-field
           v-model="item.quantity"
           type="number"
           min="1"
           label="Qty"
           single-line
           dense
-          class="quantity-input"
-        ></v-text-field>
-      </v-col>
+          class="quantity-input">
+          </v-text-field>
+        </v-col>
 
-      <!-- Remove Button Column -->
-      <v-col cols="12" sm="2">
-        <v-btn color="red" @click="removeFromCart(item.id)" class="float-right">
-          Remove
-        </v-btn>
-      </v-col>
-    </v-row>
+        <v-col cols="12" sm="2">
+          <v-btn color="red" @click="removeFromCart(item.id)" class="float-right">
+            Remove
+          </v-btn>
+        </v-col>
+      </v-row>
 
       <v-row>
         <v-col>
@@ -62,58 +60,55 @@
       </v-row>
 
       <v-dialog v-model="confirmDialog" persistent max-width="300px">
-    <v-card>
-      <v-card-title class="headline">Proceed to Checkout</v-card-title>
-      <v-card-text>
-        Are you sure you want to proceed to checkout?
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="openCheckoutDialog">Yes</v-btn>
-        <v-btn color="red darken-1" text @click="confirmDialog = false">No</v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+        <v-card>
+          <v-card-title class="headline">Proceed to Checkout</v-card-title>
+          <v-card-text>Are you sure you want to proceed to checkout?</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" text @click="openCheckoutDialog">Yes</v-btn>
+            <v-btn color="red darken-1" text @click="confirmDialog = false">No</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
 
-  <v-dialog v-model="orderSubmittedDialog" persistent max-width="300px">
-    <v-card>
-      <v-card-title class="headline">Confirmation</v-card-title>
-      <v-card-text>
-        Order submitted.
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="confirmOrder">OK</v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+      <v-dialog v-model="orderSubmittedDialog" persistent max-width="300px">
+        <v-card>
+          <v-card-title class="headline">Confirmation</v-card-title>
+          <v-card-text>Order submitted.</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" text @click="confirmOrder">OK</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
 
-  <v-dialog v-model="checkoutDialog" persistent max-width="500px">
-    <v-card>
-      <v-card-title class="headline">Checkout Details</v-card-title>
-      <v-card-text>
-        <v-text-field v-model="checkoutDetails.fullName" label="Full Name" required></v-text-field>
-        <v-text-field v-model="checkoutDetails.phoneNumber" label="Phone Number" required></v-text-field>
-        <v-text-field v-model="checkoutDetails.email" label="Email Address" required></v-text-field>
-        <v-text-field v-model="checkoutDetails.address" label="Address" required></v-text-field>
-        <v-text-field v-model="checkoutDetails.postalCode" label="Postal Code" required></v-text-field>
-        <v-text-field v-model="checkoutDetails.city" label="City" required></v-text-field>
-        <div class="final-price">
-          <strong>Total Price:</strong> {{ totalPrice.toFixed(2) }}€
-        </div>
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text :disabled="!isFormComplete" @click="submitCheckout">Submit</v-btn>
-        <v-btn color="red darken-1" text @click="checkoutDialog = false">Back</v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+      <v-dialog v-model="checkoutDialog" persistent max-width="500px">
+        <v-card>
+          <v-card-title class="headline">Checkout Details</v-card-title>
+          <v-card-text>
+            <v-text-field v-model="checkoutDetails.fullName" label="Full Name" required></v-text-field>
+            <v-text-field v-model="checkoutDetails.phoneNumber" label="Phone Number" required></v-text-field>
+            <v-text-field v-model="checkoutDetails.email" label="Email Address" required></v-text-field>
+            <v-text-field v-model="checkoutDetails.address" label="Address" required></v-text-field>
+            <v-text-field v-model="checkoutDetails.postalCode" label="Postal Code" required></v-text-field>
+            <v-text-field v-model="checkoutDetails.city" label="City" required></v-text-field>
+            <div class="final-price">
+              <strong>Total Price:</strong> {{ totalPrice.toFixed(2) }}€
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" text :disabled="!isFormComplete" @click="submitCheckout">Submit</v-btn>
+            <v-btn color="red darken-1" text @click="checkoutDialog = false">Back</v-btn></v-card-actions>
+        </v-card>
+      </v-dialog>
 
     </template>
     <v-divider class="orange-divider"></v-divider>
   </v-container>
 </template>
+
+<!--CartView.vue View Script-->
 
 <script>
 import { useCartStore } from '@/stores/cart';
@@ -154,17 +149,14 @@ export default {
     };
 
     const submitCheckout = () => {
-      // You would handle the actual submission logic here.
-      // For now, we'll just open the order submission confirmation dialog.
-
-      checkoutDialog.value = false; // Close the checkout dialog
-      orderSubmittedDialog.value = true; // Open the order submitted dialog
+      checkoutDialog.value = false;
+      orderSubmittedDialog.value = true;
           
     };
 
     const confirmOrder = () => {
-      cart.clearCart(); // Clear the cart
-      orderSubmittedDialog.value = false; // Close the dialog
+      cart.clearCart();
+      orderSubmittedDialog.value = false;
     };
 
     const isFormComplete = computed(() => {
@@ -176,7 +168,6 @@ export default {
              checkoutDetails.value.city !== '';
     });
 
-    // Watcher to ensure quantity is never less than 1
     watch(() => cart.items, (newItems) => {
       newItems.forEach(item => {
         if (item.quantity < 1) {
@@ -188,29 +179,32 @@ export default {
     return { cart, removeFromCart, totalPrice, confirmDialog, checkoutDialog, checkoutDetails, proceedToCheckout, openCheckoutDialog, isFormComplete, orderSubmittedDialog, submitCheckout, confirmOrder};
   },
 };
+
 </script>
+
+<!--CartView.vue View CSS-->
 
 <style scoped>
 .float-right {
   float: right;
 }
 .mb-2 {
-  margin-bottom: 16px; /* Adjust as needed */
+  margin-bottom: 16px;
 }
 
-.quantity-input .v-text-field__slot {
-  max-width: 100; /* Adjust this value as needed to make the input smaller */
+.quantity-input{
+  max-width: 100;
 }
 
 .product-image {
-  max-width: 50px; /* Adjust as needed */
-  margin-right: 3px; /* Spacing between image and product name */
+  max-width: 50px;
+  margin-right: 3px;
 }
 
 .final-price {
-  margin-top: 20px; /* Adjust as needed */
+  margin-top: 20px;
   text-align: right;
-  font-size: 1.2em; /* Adjust as needed */
+  font-size: 1.2em;
 }
 
 .orange-divider {
