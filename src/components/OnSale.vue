@@ -51,9 +51,6 @@
 <!--OnSale.vue Component Script-->
 
 <script>
-export default {
-  name: 'OnSale',
-};
 
 </script>
 

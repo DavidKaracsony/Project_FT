@@ -17,7 +17,7 @@ import FooterSection from './components/FooterSection.vue';
       <router-view/>
     </v-spacer>
     <v-container>
-      <FooterSection></FooterSection>
+      <FooterSection/>
     </v-container>
   </v-app>
 </template>

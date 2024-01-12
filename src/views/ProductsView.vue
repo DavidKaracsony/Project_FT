@@ -74,7 +74,6 @@ export default {
 },
   data() {
     return {
-      products: productsData,
       selectedAnimal: 'all',
       selectedType: 'all',
       dialog: false,
@@ -83,7 +82,7 @@ export default {
   },
   computed: {
     filterProducts() {
-      return this.products.filter(product => {
+      return productsData.filter(product => {
         return (this.selectedAnimal === 'all' || product.animal === this.selectedAnimal) &&
                (this.selectedType === 'all' || product.type === this.selectedType);
       });

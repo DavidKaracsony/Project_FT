@@ -15,10 +15,6 @@
 
 <script>
 
-export default {
-  name: 'Navbar',
-};
-
 </script>
 
 <!--NavBar.vue Component CSS-->

@@ -14,7 +14,7 @@
           <v-text-field label="Full Name" v-model="fullName" :rules="[rules.required]" required></v-text-field>
           <v-text-field label="Email" v-model="email" :rules="[rules.required, rules.email]" required type="email"></v-text-field>
           <v-textarea label="Your Message" v-model="message" :rules="[rules.required]" required rows="5"></v-textarea>
-          <v-btn :disabled="isSubmitDisabled" type="submit" style="color: white; background-color: orange;">Submit</v-btn>
+          <v-btn :disabled="isSubmitDisabled" type="submit" id=submit-button>Submit</v-btn>
         </v-form>
       </v-col>
     </v-row>
@@ -72,9 +72,6 @@ export default
     
     clearFormAndCloseDialog() {
       this.$refs.form.reset();
-      this.fullName = '';
-      this.email = '';
-      this.message = '';
       this.dialog=false;
     },
   },
@@ -96,4 +93,9 @@ export default
   margin-top: 25px;
 }
 
+#submit-button
+{
+  color: white;
+  background-color: orange;
+}
 </style>
